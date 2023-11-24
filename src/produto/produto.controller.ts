@@ -7,8 +7,8 @@ import {
     Post,
     Put,
   } from '@nestjs/common';
+
   import { randomUUID } from 'crypto';
-  
   import { AtualizaProdutoDTO } from './dto/atualizaProduto.dto';
   import { CriaProdutoDTO } from './dto/CriaProduto.dto';
   import { ProdutoEntity } from './produto.entity';
@@ -33,8 +33,8 @@ import {
       produto.quantidade = dadosProduto.quantidade;
       produto.descricao = dadosProduto.descricao;
       produto.categoria = dadosProduto.categoria;
-      // produto.caracteristicas = dadosProduto.caracteristicas;
-      // produto.imagens = dadosProduto.imagens;
+      produto.caracteristicas = dadosProduto.caracteristicas;
+      produto.imagens = dadosProduto.imagens;
   
       const produtoCadastrado = this.produtoService.criaProduto(produto);
       return produtoCadastrado;
